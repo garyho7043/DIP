@@ -173,18 +173,18 @@ def extract(img1, img2):
 
 
 
-filename = "C:/Users/Max/Desktop/python/programming/DIP/integrated-ckt-damaged.tif"
+filename = "./DIP/integrated-ckt-damaged.tif"
 img1 = cv2.imread(filename,0)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/1.jpg', img1)
+cv2.imwrite('./DIP/1.jpg', img1)
 
 original = np.fft.fft2(img1)
 img2 = np.log(1+np.abs(original))
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/2.jpg', img2)
+cv2.imwrite('./DIP/2.jpg', img2)
 
       
 center = np.fft.fftshift(original)
 img3 = np.log(1+np.abs(center))           
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/3.jpg', img3)
+cv2.imwrite('./DIP/3.jpg', img3)
 
 LowPass = gaussian_filter(50,img1.shape)#same subroutine like way1
 plt.subplot(131), plt.imshow(LowPass, "gray"), plt.title("Gaussian Low Pass Filter")
@@ -192,9 +192,9 @@ plt.subplot(131), plt.imshow(LowPass, "gray"), plt.title("Gaussian Low Pass Filt
 
 LowPassCenter = center * LowPass
 img4 = np.log(1+np.abs(LowPassCenter)) 
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/4.jpg', img4)
+cv2.imwrite('./DIP/4.jpg', img4)
 
 LowPass = np.fft.ifftshift(LowPassCenter)
 inverse_LowPass = np.fft.ifft2(LowPass)
 inverse_LowPass = np.abs(inverse_LowPass)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/5.jpg',inverse_LowPass)
+cv2.imwrite('./DIP/5.jpg',inverse_LowPass)
