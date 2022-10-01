@@ -171,38 +171,38 @@ def extract(img1, img2):
 
 
 
-filename = "C:/Users/Max/Desktop/python/programming/DIP/integrated-ckt-damaged.tif"
+filename = "./DIP/integrated-ckt-damaged.tif"
 origin_img = cv2.imread(filename)
 
 open_picture(origin_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/4.35(a).jpg', origin_img)
+cv2.imwrite('./DIP/4.35(a).jpg', origin_img)
 
 #4.35(b)
 zero_ped_img = pad_image(origin_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/4.35(b).jpg', zero_ped_img)
+cv2.imwrite('./DIP/4.35(b).jpg', zero_ped_img)
 
 #4.35(c)
 centered_for_FF_img = centered_for_FF(zero_ped_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/4.35(c).jpg', centered_for_FF_img)
+cv2.imwrite('./DIP/4.35(c).jpg', centered_for_FF_img)
 
 #4.35(d)
 DFF_img = DFF(centered_for_FF_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/4.35(d).jpg', DFF_img)
+cv2.imwrite('./DIP/4.35(d).jpg', DFF_img)
 
 
 #4.35(e)
 gaussian_filter_img = gaussian_filter(50,centered_for_FF_img.shape)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/4.35(e).jpg', gaussian_filter_img)
+cv2.imwrite('./DIP/4.35(e).jpg', gaussian_filter_img)
 
 #4.35(f)
 elementwise_img = elementwise(DFF_img, gaussian_filter_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/4.35(f).jpg', elementwise_img)
+cv2.imwrite('./DIP/4.35(f).jpg', elementwise_img)
 
 #4.35(g)
 IDFT_img = IDFT(elementwise_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/4.35(g).jpg', IDFT_img)
+cv2.imwrite('./DIP/4.35(g).jpg', IDFT_img)
 #4.35(h)
 extracted_img = extract(origin_img,IDFT_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/4.35(h).jpg', extracted_img)
+cv2.imwrite('./DIP/4.35(h).jpg', extracted_img)
 
 
