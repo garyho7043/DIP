@@ -24,7 +24,7 @@ def img_segmentation(img, ltop, rtbm):
   
 
 #open
-filename = "C:/Users/Max/Desktop/python/programming/DIP/107422.jpg"
+filename = "./DIP/107422.jpg"
 origin_img = cv2.imread(filename)
 #open_picture('origin', origin_img)
 
@@ -236,5 +236,5 @@ plt.show()
 #RGB to Gray level
 #gray_img = cv2.cvtColor(img_cap, cv2.COLOR_BGR2GRAY)
 #open_picture('graylevel', gray_img)
-#cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/gray_img.png', gray_img)
+#cv2.imwrite('./DIP/gray_img.png', gray_img)
 
