@@ -23,7 +23,7 @@ def img_segmentation(img, ltop, rtbm):
   
 
 
-filename = "C:/Users/Max/Desktop/python/programming/DIP/test.png"
+filename = "./DIP/test.png"
 origin_img = cv2.imread(filename)
 open_picture('origin', origin_img)
 
@@ -37,13 +37,13 @@ ltop = (997, 930)  #lefttop(x,y)
 rtbm = (1430, 980) #rightbottom(x,y)
 img_cap = img_segmentation(origin_img, ltop, rtbm)
 open_picture('segment', img_cap)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/segmentation_img.png', img_cap)
+cv2.imwrite('./DIP/segmentation_img.png', img_cap)
 
 
 #RGB to Gray level
 gray_img = cv2.cvtColor(img_cap, cv2.COLOR_BGR2GRAY)
 open_picture('graylevel', gray_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/gray_img.png', gray_img)
+cv2.imwrite('./DIP/gray_img.png', gray_img)
 
 
 
@@ -65,7 +65,7 @@ plt.show()
 num1_ltop = (0, 10)  #lefttop(x,y)
 num1_rtbm = (21, 48) #rightbottom(x,y)
 num1 = img_segmentation(edged_img, num1_ltop, num1_rtbm)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/gray_img0.png', num1)
+cv2.imwrite('./DIP/gray_img0.png', num1)
 open_picture('num1', num1)
 
 
@@ -81,6 +81,6 @@ while i < 17 :
   x = x + 24
   i= i + 1
   open_picture('num%d'%(i), numn)
-  cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/gray_img%d.png'%(i), numn)
+  cv2.imwrite('./DIP/gray_img%d.png'%(i), numn)
   
   
