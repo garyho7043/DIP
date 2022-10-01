@@ -52,7 +52,7 @@ def get_minAreaRect(image):
   
   
   
-filename = "C:/Users/Max/Desktop/python/programming/DIP/107422.jpg"
+filename = "./DIP/107422.jpg"
 image = cv2.imread(filename)
 
 
