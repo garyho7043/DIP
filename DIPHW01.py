@@ -78,46 +78,46 @@ def gammatransformation(img):
 
 
 
-filename = "C:/Users/Max/Desktop/python/programming/DIP/bonescan.tif"
+filename = "./DIP/bonescan.tif"
 origin_img = cv2.imread(filename)
 
 open_picture(origin_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/3.57(a).jpg', origin_img)
+cv2.imwrite('./DIP/3.57(a).jpg', origin_img)
 
 
 #3.57(b)
 laplacian_img = laplacian(origin_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/3.57(b).jpg', laplacian_img)
+cv2.imwrite('./DIP/3.57(b).jpg', laplacian_img)
 
 #3.57(c)
 weightnum1 = 0.5
 weightnum2 = 0.5
 gamma = 0
 addweighted_img = addweighted(origin_img, weightnum1, laplacian_img, weightnum2, gamma)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/3.57(c).jpg', addweighted_img)
+cv2.imwrite('./DIP/3.57(c).jpg', addweighted_img)
 
 #3.57(d)
 sobel_img = sobel(origin_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/3.57(d).jpg', sobel_img)
+cv2.imwrite('./DIP/3.57(d).jpg', sobel_img)
 
 
 #3.57(e)
 five_mul_five_box_filter_img = five_mul_five_box_filter(sobel_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/3.57(e).jpg', five_mul_five_box_filter_img)
+cv2.imwrite('./DIP/3.57(e).jpg', five_mul_five_box_filter_img)
 
 #3.57(f)
 product_img = product(laplacian_img, five_mul_five_box_filter_img)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/3.57(f).jpg', product_img)
+cv2.imwrite('./DIP/3.57(f).jpg', product_img)
 
 #3.57(g)
 weightnum1 = 0.5
 weightnum2 = 0.5
 gamma = 0
 addweighted_img_two = addweighted(origin_img, weightnum1, product_img, weightnum2, gamma)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/3.57(g).jpg', addweighted_img_two)
+cv2.imwrite('./DIP/3.57(g).jpg', addweighted_img_two)
 
 #3.57(h)
 gamma_transformation_img = gammatransformation(addweighted_img_two)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/3.57(h).jpg', gamma_transformation_img)
+cv2.imwrite('./DIP/3.57(h).jpg', gamma_transformation_img)
 
 
