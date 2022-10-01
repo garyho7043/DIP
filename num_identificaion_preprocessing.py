@@ -38,7 +38,7 @@ def sobel(img):
 
 
 
-filename = "C:/Users/Max/Desktop/python/programming/DIP/test.png"
+filename = "./DIP/test.png"
 origin_img = cv2.imread(filename)
 open_picture('origin', origin_img)
 
@@ -51,7 +51,7 @@ ltop = (990, 930)  #lefttop(x,y)
 rtbm = (1430, 980) #rightbottom(x,y)
 img_cap = origin_img[ltop[1]:rtbm[1], ltop[0]: rtbm[0]]#image segmentation(img[y,x])
 open_picture('segment', img_cap)
-cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/segmentation_img.png', img_cap)
+cv2.imwrite('./DIP/segmentation_img.png', img_cap)
 
 #RGB to Gray level
 gray_img = cv2.cvtColor(img_cap, cv2.COLOR_BGR2GRAY)
@@ -151,5 +151,5 @@ open_picture('canny', edged_img)
 
 #img_cap[markers == -1] = [255,0,0]
 #open_picture(img_cap)
-#cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/watershed_img.png', img_cap)
+#cv2.imwrite('./DIP/watershed_img.png', img_cap)
 
