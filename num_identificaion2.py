@@ -71,6 +71,8 @@ open_picture('num1', num1)
 
 i = 0
 x = 22
+
+
 while i < 17 : 
   
   numn_ltop = (x, 10)  #lefttop(x,y)
