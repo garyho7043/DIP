@@ -230,7 +230,7 @@ plt.show()
 #rtbm = (1430, 980) #rightbottom(x,y)
 #img_cap = img_segmentation(origin_img, ltop, rtbm)
 #open_picture('segment', img_cap)
-#cv2.imwrite('C:/Users/Max/Desktop/python/programming/DIP/segmentation_img.png', img_cap)
+#cv2.imwrite('./DIP/segmentation_img.png', img_cap)
 
 
 #RGB to Gray level
